@@ -115,11 +115,16 @@ fn v018() {
     // 0.1.8 integer data type variations in depth
     println!("---");
 
-    let x: i8 = 5
-    let x: i16 = 5
-    let x: i32 = 5
-    let x: i64 = 5
-    let x: i128 = 5
+    let x: i8 = 5;
+    println!("x = {}", x);
+    let x: i16 = 5;
+    println!("x = {}", x);
+    let x: i32 = 5;
+    println!("x = {}", x);
+    let x: i64 = 5;
+    println!("x = {}", x);
+    let x: i128 = 5;
+    println!("x = {}", x);
 }
 
 fn main() {
@@ -131,4 +136,5 @@ fn main() {
     v015();
     v016();
     v017(); // data types
+    v018(); // ints in depth
 }
