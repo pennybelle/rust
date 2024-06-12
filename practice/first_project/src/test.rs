@@ -1,9 +1,12 @@
-use std::io;
+fn lolwut() {
+    let number = {
+        let second_number = 3;
+        second_number
+    };
 
-fn input_test() {
-    let mut input = String::new();
+    println!("number = {}", number)
+}
 
-    io::stdin().read_line(&mut input).expect("failt to read line")
-
-    println!("{}", input)
+fn main() {
+    lolwut();
 }

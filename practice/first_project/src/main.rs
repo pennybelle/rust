@@ -218,7 +218,7 @@ fn v0112() {
     let mut input = String::new();
 
     // on input, modify String (input)
-    // & is a reference, immutable by default so i make it immutable
+    // & is a reference, immutable by default so i make it mutable
     // read_line returns a Result Object
     io::stdin()
         .read_line(&mut input)
@@ -307,16 +307,16 @@ fn v0115() {
 
 fn v0116() {
     println!("--- 0.1.16 conditions ---");
-    
+
     // logical operators:
     // && is and
     // || is or
     // ! is not
 
     // initialize variable and store result of comparison
-    let cond = (5 as f32) <= 2.2;
+    let cond = (1 as f32) <= 2.2;
     println!("{}", cond);
-    let cond2 = (5 as f32) <= 2.2;
+    let cond2 = (2.2 as f32) <= 2.2;
     println!("{}", cond2);
 
     // return true only if both conditions are true (and gate)
@@ -326,6 +326,24 @@ fn v0116() {
     // return true if either or both conditions are true (or gate)
     let result2 = cond || cond2;
     println!("{}", result2);
+}
+
+fn v0117() {
+    println!("--- 0.1.17 format specifiers ---");
+
+    // Different formatting can be invoked by specifying the format character
+    // after a `:`.
+    let num = 10 as i32;
+    for i in 0..num {
+        println!("---");
+        println!("Base 10:               {}", i); // 69420
+        println!("Base 2 (binary):       {:b}", i); // 10000111100101100
+        println!("Base 8 (octal):        {:o}", i); // 207454
+        println!("Base 16 (hexadecimal): {:x}", i); // 10f2c
+    }
+
+    println!("{i:>5}", i=1);
+    println!("{i:0<6}", i=1);
 }
 
 fn main() {
@@ -345,5 +363,6 @@ fn main() {
     // v0113(); // input testing
     // v0114(); // changing data types
     // v0115(); // ADD 'EM UP (basic calculator)
-    v0116(); // conditions
+    // v0116(); // conditions
+    v0117();
 }
