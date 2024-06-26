@@ -2,7 +2,7 @@
 use std::io;
 
 fn main() {
-    equation(prompt());
+    equation_loop(prompt());
 }
 
 fn prompt() -> u64 {
@@ -27,8 +27,19 @@ fn prompt() -> u64 {
     input
 }
 
-fn equation(input: u64) {
+fn equation_loop(input: u64) {
+    let start_val = 1;
+    let stop_val = input;
+    
+    for x in (start_val..=stop_val).rev() {
+        println!("---");
+        equation(x);
+    }
+}
+
+fn equation(input: u64) -> u64 {
     let mut x = input;
+    println!("{}", x);
 
     // loop over equation until x == 1
     while x != 1 {
@@ -39,4 +50,7 @@ fn equation(input: u64) {
         }
         println!("{}", x);
     }
+
+    // return x
+    x
 }
