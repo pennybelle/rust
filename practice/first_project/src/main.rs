@@ -342,8 +342,27 @@ fn v0117() {
         println!("Base 16 (hexadecimal): {:x}", i); // 10f2c
     }
 
-    println!("{i:>5}", i=1);
-    println!("{i:0<6}", i=1);
+    println!("{i:>5}", i = 1);
+    println!("{i:0<6}", i = 1);
+}
+
+fn v0118() {
+    println!("--- 0.1.18 creating arrays from a range ---");
+
+    // create an array with 100 elements in it (using turbofish type-casting)
+    let array = (1..=100).collect::<Vec<u32>>();
+
+    println!("{}", array.len());
+}
+
+fn string_example() {
+    // implicit type
+    let string_ex = "string";
+    println!("{}", string_ex);
+
+    // explicit type
+    let string_ex = String::from("string 2");
+    println!("{}", string_ex);
 }
 
 fn main() {
@@ -364,5 +383,7 @@ fn main() {
     // v0114(); // changing data types
     // v0115(); // ADD 'EM UP (basic calculator)
     // v0116(); // conditions
-    v0117();
+    // v0117();
+    // v0118();
+    string_example();
 }
