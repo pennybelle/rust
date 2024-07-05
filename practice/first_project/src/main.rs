@@ -188,6 +188,15 @@ fn v0110() {
     println!("tuple before overwrite = {}, {}, {}", tup.0, tup.1, tup.2);
     let tup: (i32, i32, bool) = (1, 2, false);
     println!("tuple after overwrite = {}, {}, {}", tup.0, tup.1, tup.2);
+
+    // unpacking a tuple
+    let cat = ("Furry McFurson", 3.5);
+    let (name, age) = cat;
+    println!("{} is {} years old.", name, age);
+
+    // indexing the second element of a tuple
+    let numbers = (1, 2, 3);
+    let second = numbers.1;
 }
 
 fn v0111() {
@@ -365,6 +374,14 @@ fn string_example() {
     println!("{}", string_ex);
 }
 
+fn slice_out_of_array() {
+    // create array of 5 elements
+    let a = [1, 2, 3, 4, 5];
+
+    // create slice of elements 2, 3, and 4 (using indexes)
+    let nice_slice = &a[1..=3];
+}
+
 fn main() {
     // v010();
     // v011();
@@ -384,6 +401,6 @@ fn main() {
     // v0115(); // ADD 'EM UP (basic calculator)
     // v0116(); // conditions
     // v0117();
-    // v0118();
-    string_example();
+    v0118();
+    // string_example();
 }
