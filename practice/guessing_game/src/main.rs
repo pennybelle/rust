@@ -7,7 +7,7 @@ fn main() {
 
     println!("Guess the number!");
 
-    // generate random number between 0 and 100 and print number
+    // generate random number between 0 and 100
     let number: i64 = rand::thread_rng().gen_range(1, 101);
 
     // loop until number is guessed correctly

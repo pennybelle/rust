@@ -2,6 +2,8 @@ use std::io;
 
 fn main() {
     let operator = "+";
+    // let operator = prompt("Enter an operator: ");
+
     let x = prompt("Enter a value: ");
     let y = prompt("Enter a second value: ");
 
@@ -11,18 +13,17 @@ fn main() {
     //     let y: i32 = y.trim().parse().expect("Must be an integer");
     // }
 
-
     let result = match operator {
         "+" => {
             let x: i32 = x.trim().parse().expect("Must be an integer");
             let y: i32 = y.trim().parse().expect("Must be an integer");
-            addition(x, y).to_string()
-        },
+            add(x, y).to_string()
+        }
         "-" => {
             let x: i32 = x.trim().parse().expect("Must be an integer");
             let y: i32 = y.trim().parse().expect("Must be an integer");
             subtract(x, y).to_string()
-        },
+        }
         // "*" => multiply(x, y).to_string(),
         // "/" => match divid(x, y) {
         //     Some(result) => result.to_string(),
@@ -37,7 +38,7 @@ fn main() {
     // println!("{}", subtraction(4, 1));
 }
 
-fn addition(x: i32, y: i32) -> i32 {
+fn add(x: i32, y: i32) -> i32 {
     x + y
 }
 
@@ -80,14 +81,11 @@ fn prompt(prompt_msg: &str) -> String {
 
     // initialize string used as input value
     let mut input = String::new();
-    
+
     // read input as string
     io::stdin()
-    .read_line(&mut input)
-    .expect("Failed to read line");
-
-    // // set input string to variable and convert to u64
-    // let input: u64 = input.trim().parse().expect("Must be an integer");
+        .read_line(&mut input)
+        .expect("Failed to read line");
 
     // return input as u64
     input
