@@ -1,15 +1,15 @@
 fn main() {
-    fibonacci(100);
+    fibonacci(25);
 }
 
-fn fibonacci(depth: i128) {
-    let mut last: i128 = 0;
-    let mut current: i128 = 1;
-    let mut cache: i128 = 0;
+fn fibonacci(depth: u64) {
+    let mut last: u64 = 0;
+    let mut current: u64 = 1;
 
-    for _ in 0..=depth {
+    for _ in 0..depth {
         println!("{}", last);
-        cache = current + last;
+
+        let cache: u64 = current + last;
         last = current;
         current = cache;
     }
